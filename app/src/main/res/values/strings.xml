@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Entrega_Listeners</string>
+    <string name="numero_aleatorio">Número aleatorio</string>
+    <string name="letra_aleatoria">Letra aleatoria</string>
+    <string name="palabra_aleatoria">Palabra aleatoria</string>
+    <string name="cambiar_letra_aleatoria">Cambiar letra aleatoria</string>
+</resources>
