@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.tv1.doOnTextChanged { _, _, _, count ->
-            if(count == 5)
+            if(binding.tv1.text.length == 5)
                 binding.b4.visibility = VISIBLE
             else
                 binding.b4.visibility = INVISIBLE
