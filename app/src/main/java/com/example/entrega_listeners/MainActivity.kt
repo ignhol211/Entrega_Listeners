@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 word += ('a'..'z').random().toString()
             binding.tv1.text = word
             binding.tv1.visibility = VISIBLE
-            
+
             if (binding.tv1.text.length == 5)
                 binding.b4.visibility = VISIBLE
         }
