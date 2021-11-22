@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.b3.setOnClickListener {
-
+            word=""
             for (index in 0..4)
                 word += ('a'..'z').random().toString()
             binding.tv1.text = word
