@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.*
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import com.example.entrega_listeners.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityMainBinding
+    private lateinit var binding : ActivityMainBinding
 
     var word =""
 
@@ -36,20 +37,24 @@ class MainActivity : AppCompatActivity() {
 
             if (binding.tv1.text.length == 5)
                 binding.b4.visibility = VISIBLE
+        }
+
+        binding.tv1.doOnTextChanged { _, _, _, count ->
+            if(count == 5)
+                binding.b4.visibility = VISIBLE
             else
                 binding.b4.visibility = INVISIBLE
 
         }
-
         binding.b4.setOnClickListener() {
-            var newChar = ('a'..'z').random().toString()
-            var index = (0..4).random()
-            var oldChar = word[index]
+            val newChar = ('a'..'z').random()
+            val index = (0..4).random()
+            val oldChar = word[index]
 
             Toast.makeText(this, "Cambio la letra $oldChar por la letra $newChar", Toast.LENGTH_LONG).show()
-            word = word.indexOf(newChar,index, ignoreCase = false).toString()
+
+            //word = word.replace(oldChar,newChar,false)
             binding.tv1.text = word
         }
-
     }
 }
