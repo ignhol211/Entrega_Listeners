@@ -50,10 +50,10 @@ class MainActivity : AppCompatActivity() {
             val newChar = ('a'..'z').random()
             val index = (0..4).random()
             val oldChar = word[index]
-            
-            Toast.makeText(this, "Cambio la letra $oldChar por la letra $newChar", Toast.LENGTH_LONG).show()
 
-            word = word.replace(oldChar,newChar,false)
+            Toast.makeText(this, "Cambio la letra $oldChar por la letra $newChar", Toast.LENGTH_LONG).show()
+            word = word.replaceRange(index,index+1, newChar.toString())
+            //word = word.replace(oldChar,newChar,false)
             binding.tv1.text = word
         }
     }
